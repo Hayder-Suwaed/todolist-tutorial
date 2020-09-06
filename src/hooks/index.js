@@ -9,13 +9,13 @@ export const useTasks = (selectedProject) => {
 
   useEffect(() => {
     let unsubscribe = firebase
-      .firebase()
+      .firestore()
       .collection("tasks")
-      .where("userId", "==", "yAL3tzHMtzRbw");
+      .where("userId", "==", "yAl3tzHMtzRbw");
 
     unsubscribe =
       selectedProject && !collatedTasksExist(selectedProject)
-        ? (unsubscripe = unsubscripe.where("projectId", "==", selectedProject))
+        ? (unsubscribe = unsubscribe.where("projectId", "==", selectedProject))
         : selectedProject === "TODAY"
         ? (unsubscribe = unsubscribe.where(
             "date",
@@ -64,11 +64,11 @@ export const useProjects = () => {
           ...project.data(),
           docId: project.id,
         }));
+        
+        if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
+          setProjects(allProjects);
+        }
       });
-
-    if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
-      setProjects(allProjects);
-    }
   }, [projects]);
 
   return { projects, setProjects };
