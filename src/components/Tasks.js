@@ -4,11 +4,11 @@ import { Checkbox } from "./Checkbox";
 import { useTasks } from "../hooks";
 import { collatedTasks } from "../constants";
 import { getTitle, getCollatedTitle, collatedTasksExist } from "../helpers";
-import { useSelectedProjctValue, useProjctsValue } from "../context";
+import { useSelectedProjectValue, useProjectsValue } from "../context";
 
 export const Tasks = () => {
-  const { selectedProject } = useSelectedProjctValue();
-  const { projects } = useProjctsValue();
+  const { selectedProject } = useSelectedProjectValue();
+  const { projects } = useProjectsValue();
   const { tasks } = useTasks(selectedProject);
 
   let projectName = "";

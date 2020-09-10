@@ -12,4 +12,4 @@ export const ProjectsProvider = ({ children }) => {
   );
 };
 
-export const useProjctsValue = () => useContext(ProjectsContext);
+export const useProjectsValue = () => useContext(ProjectsContext);

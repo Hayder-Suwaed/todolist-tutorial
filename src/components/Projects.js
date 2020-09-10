@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useSelectedProjctValue, useProjctsValue } from "../context";
+import { useSelectedProjectValue, useProjectsValue } from "../context";
 import { IndividualProject } from "./IndividualProject";
 
 export const Projects = ({ activeValue = null }) => {
   const [active, setActive] = useState(activeValue);
-  const { setSelectedProject } = useSelectedProjctValue();
-  const { projects } = useProjctsValue();
+  const { setSelectedProject } = useSelectedProjectValue();
+  const { projects } = useProjectsValue();
 
   return (
     projects &&
