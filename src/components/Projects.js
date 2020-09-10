@@ -3,10 +3,9 @@ import { useSelectedProjctValue, useProjctsValue } from "../context";
 import { IndividualProject } from "./IndividualProject";
 
 export const Projects = ({ activeValue = null }) => {
-    const [active, setActive] = useState(activeValue);
-    const { setSelectedProject } = useSelectedProjctValue();
-    const { projects } = useProjctsValue();
-
+  const [active, setActive] = useState(activeValue);
+  const { setSelectedProject } = useSelectedProjctValue();
+  const { projects } = useProjctsValue();
 
   return (
     projects &&
@@ -29,7 +28,7 @@ export const Projects = ({ activeValue = null }) => {
           setSelectedProject(project.projectId);
         }}
       >
-        <IndividualProject project={project}/>
+        <IndividualProject project={project} />
       </li>
     ))
   );
